@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            Html forms
+        </title>
+        <style>
+            body{
+                font-family: sans-serif
+            }
+        </style>
+    </head>
+    <body>
+        <form action="./register.html" method="GET">
+            <fieldset>
+                <legend>Registration Form</legend>
+                <div>
+                    <label for="fname">First Name</label>
+                    <input type="text" name="firstname" id="fname" autofocus>
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lastname" id="lname">
+                </div>
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dateofbirth" id="dob">
+                </div>
+                <label for="address">Address</label>
+                <div>
+                    <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="age">CGPA</label>
+                    <input type="number" id="age" min="6" max="10" step=".1"><br>
+                    <label for="menu">Gender :</label>
+                    <label for="male">Male</label><input type="radio" name="gender" id="male">
+                    <label for="female">Female</label><input type="radio" name="gender" id="female">
+                </div>
+                <div>
+                    <label for="institute">College</label>
+                    <input type="text" id="institute" value="RGUKT Rkvalley" disabled>
+                    <label for="menu">Profession</label>
+                    <select name="type" id="menu">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="worker">Worker</option>
+                    </select>
+                </div>
+                <label for="branch">Language</label>
+                <div>
+                    <input type="checkbox" name="language" name="Telugu">Telugu
+                    <input type="checkbox" name="language" name="Hindi">Hindi
+                    <input type="checkbox" name="language" name="Tamil">Tamil
+                </div>
+                <label for="branch">Branch</label>
+                <input list="branch">
+                <datalist id="branch">
+                    <option value="cse"></option>
+                    <option value="ece"></option>
+                    <option value="mme"></option>
+                    <option value="che"></option>
+                    <option value="ce"></option>
+                    <option value="me"></option>
+                </datalist>
+                <button type="submit">Register</button>
+            </fieldset>
+        </form>
+    </body>
+</html>
