@@ -1,0 +1,124 @@
+git init
+git config user.name "yogi" //username
+git config user.email "yogi@gmail.com" //gmailaccount
+
+//clear the screen
+clear
+
+//to check the commit logs and added logs
+git log
+
+// iitialization
+git init 
+
+//to get the repository from github
+git remote add origin "http://github.com/yogendra/git-github" 
+
+//fetch all files from central repository to local repository
+git pull add origin
+
+//to see new files and modified files
+git status
+
+//if we create any file we have to add the files into repository
+//create all.txt
+git add all.txt
+
+//although it has been added to repository it is not in repository
+//so we have to commit to push it into local repository
+git commit -m all.txt "commit done for all.txt"
+
+//to add all files that newly added we have to use -A
+git add -A  (or ) git add all.txt all1.txt 2.txt
+
+//to commit all files at a time
+git commit -a -m "all files added at a time"
+
+//create a new branch for repository
+git branch firstbranch
+
+//to switch to teh another branch
+git checkout firstbranch
+
+Note:-
+-----
+	The changes that happened in the branch is not applicable to other branches
+
+//To get the changes done in to the one branch into other branch
+
+Note:-
+------
+	//First enter into the destination branch that you want to copy the other branch
+	//At below the firstbranch will be copied into the current branch(master)
+git merge firstbranch
+
+//rebasing is same as merge but the commits also changes in head
+//below command will get the things from firstbranch to master
+git rebase firstbranch
+
+//SSH:- TO generate ssh key
+//below command generate ssh key and git the path of key gile
+ssh-keygen
+OUTPUT:-
+---------
+	Generating public/private rsa key pair.
+	Enter file in which to save the key (/c/Users/yogendra/.ssh/id_rsa):
+	/c/Users/yogendra/.ssh/id_rsa already exists.
+	Overwrite (y/n)? y
+	Enter passphrase (empty for no passphrase):
+	Enter same passphrase again:
+	Your identification has been saved in /c/Users/yogendra/.ssh/id_rsa.
+	Your public key has been saved in /c/Users/yogendra/.ssh/id_rsa.pub.
+	The key fingerprint is:
+	SHA256:yu/8KwACzCc87UihRdyUZeRt5dc6l75Kb93iF182tgY yogendra@DESKTOP-LLNPQLQ
+	The key's randomart image is:
+	+---[RSA 2048]----+
+	|++=o.++   .      |
+	|oO.ooo . o   .   |
+	|o.*   . o . . .  |
+	| ....  .   . . . |
+	|   . .  S   o o  |
+	|     ...     E +o|
+	|      o.    . +oB|
+	|       o.  . .o+=|
+	|       .+oo..+=o |
+	+----[SHA256]-----+
+
+
+	//Check the public key file path that contain .pub at 7 or 8 line
+	//To see our SSH key
+	cat /c/Users/yogendra/.ssh/id_rsa.pub
+	OUTPUT:-
+	---------
+		ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCh4put+9FQ/rt960mlIIK/F71/Qz3vZOy//u1s38BWOkhueTK8Jve2+ODG6MuJkgvQOkfUjxCv8uIyTFSeYsbdWkR1WhSfJpnuKW1XoC5aQCeEZe62nsTwtkrPBqX0tUZyoqy0YJmS6FI50GJxQ8pt+lqpqFrHWtZ698ihdl3HPRZth6dCck9c8roJ6bgMWMQg1l9rvz6Sh07f9ZoIfaSVTo/D31Lvlv2kx8VKdVecBimNb/h2pcPoVL3kz31cwVWtRvrSpQx/dJ+IKOp8DWPvDdWvolPhLf3Pit7LICtJQe9HynaPAJ5KMmAtjf/A5k1FAceibu9+w4ExHEgVhadF yogendra@DESKTOP-LLNPQLQ
+
+	//And goto github setting and goto SSH KEY AND GPG KEYS
+	//AND CREATE THE KEY WITH THE ABOVE SSH KEY
+
+
+//To authenticate with ssh key
+ssh -T git@github.com
+OUTPUT:-
+--------
+	Hi promeryogendra! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+-----------------------------------
+	What ever we do in git-terminal(local repository) are not updated in the git-hub central repository
+-----------------------------------
+//So we have to use below command to push any branch into the central repository
+//When we do this it will add a branch and copy all the files of that branch into the repository
+git push origin firstbranch
+
+//If we push the master branch then all data related to the master branch will beupdated into the master-branch
+git push origin master
+
+
+
+--------------------------------------------------------------
+THE IMPORTANT THING IN GIT IS TO GET BACK THE ALREADY CHANGED FILE DATA BACK
+---------------------------------------------------------------
+//FOR THAT WE HAVE TO USE THE COMMIT HASH-DATA
+git log
+
+//Copy the hash of the 
